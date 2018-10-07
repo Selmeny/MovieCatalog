@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Katalog film</string>
+    <string name="movie_catalog">Katalog film</string>
+    <string name="poster_of_the_movie">Poster film</string>
+    <string name="preview">Pratinjau</string>
+    <string name="original_title">Judul asli</string>
+    <string name="genre">Aliran</string>
+    <string name="production">Produksi</string>
+    <string name="release_date">Tanggal rilis</string>
+    <string name="revenue">Pendapatan</string>
+    <string name="score">Skor</string>
+    <string name="overview">Ringkasan</string>
+    <string name="search">Cari</string>
+    <string name="setting">Ganti bahasa</string>
+    <string name="search_hint">Cari film…</string>
+    <string name="detail">Detail</string>
+    <string name="share">Bagikan</string>
+    <string name="detail_movie">Detail film</string>
+    <string name="now_playing">Sedang tayang</string>
+    <string name="upcoming">Segera hadir</string>
+    <string name="share_using">Bagikan dengan</string>
+</resources>

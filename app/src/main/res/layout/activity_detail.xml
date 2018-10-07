@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.dicoding.paul.moviecatalog.DetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:theme="@style/ToolbarTheme">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/ToolbarTheme"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:title="@string/detail_movie"
+            app:titleTextAppearance="@style/ToolbarTheme.TitleText"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/activity_detail_content" />
+
+</android.support.design.widget.CoordinatorLayout>
