@@ -58,19 +58,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_bold"
                     android:text="@string/original_title"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail.Bold"/>
 
                 <TextView
                     android:id="@+id/tv_original_title_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_bold"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail" />
             </TableRow>
 
             <TableRow
@@ -84,19 +80,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_regular"
                     android:text="@string/release_date"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail" />
 
                 <TextView
                     android:id="@+id/tv_release_date_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_regular"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail" />
             </TableRow>
 
             <TableRow
@@ -110,25 +102,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_regular"
                     android:text="@string/score"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail"/>
 
                 <TextView
                     android:id="@+id/tv_score_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_regular"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail"/>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:weightSum="1">
 
                 <TextView
@@ -136,19 +123,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_regular"
                     android:text="@string/overview"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail" />
 
                 <TextView
                     android:id="@+id/tv_overview_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_regular"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Detail" />
             </TableRow>
         </TableLayout>
     </android.support.constraint.ConstraintLayout>

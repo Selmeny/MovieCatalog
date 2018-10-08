@@ -14,7 +14,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
+import android.support.v7.widget.SearchView;
+
+import com.dicoding.paul.moviecatalog.SearchMovie.MovieAdapter;
+import com.dicoding.paul.moviecatalog.SearchMovie.MovieItems;
+import com.dicoding.paul.moviecatalog.SearchMovie.MyAsyncTaskLoader;
 
 import java.util.ArrayList;
 import java.util.Objects;

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:nestedScrollingEnabled="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.dicoding.paul.moviecatalog.UpcomingFragment">
+    tools:context="com.dicoding.paul.moviecatalog.UpcomingFragment.UpcomingFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_upcoming"

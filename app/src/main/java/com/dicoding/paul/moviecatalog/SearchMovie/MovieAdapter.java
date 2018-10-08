@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog;
+package com.dicoding.paul.moviecatalog.SearchMovie;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,76 +7,76 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.dicoding.paul.moviecatalog.DetailActivity;
+import com.dicoding.paul.moviecatalog.R;
 
 import java.util.ArrayList;
 
 //Use RecyclerView as a best practice and for better handling/performance
-public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.MovieViewHolder> {
-    private ArrayList<UpcomingItems> upcomingList = new ArrayList<>();
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
+    private ArrayList<MovieItems> movieList = new ArrayList<>();
     private Context context;
 
-    UpcomingAdapter(Context context) {
+    public MovieAdapter(Context context) {
         this.context = context;
     }
 
-    private ArrayList<UpcomingItems> getUpcomingList() {
-        return upcomingList;
+    private ArrayList<MovieItems> getMovieList() {
+        return movieList;
     }
 
-    public void setUpcomingList(ArrayList<UpcomingItems> upcomingList) {
-        this.upcomingList = upcomingList;
+    public void setMovieList(ArrayList<MovieItems> movieList) {
+        this.movieList = movieList;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_upcoming, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_movie, parent, false);
         return new MovieViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-        UpcomingItems upcomingItems = getUpcomingList().get(position);
+        MovieItems movieItems = getMovieList().get(position);
 
         Glide.with(context)
-                .load(upcomingItems.getPoster())
+                .load(movieItems.getPoster())
                 .into(holder.imgPoster);
-        holder.tvOriginalTitle.setText(upcomingItems.getOriginalTitle());
-        holder.tvOverview.setText(upcomingItems.getOverview());
-        holder.tvReleaseDate.setText(upcomingItems.getReleaseDate());
+        holder.tvOriginalTitle.setText(movieItems.getOriginalTitle());
+        holder.tvOverview.setText(movieItems.getOverview());
+        holder.tvReleaseDate.setText(movieItems.getReleaseDate());
     }
 
     @Override
     public int getItemCount() {
-        return getUpcomingList().size();
+        return getMovieList().size();
     }
 
+    //Set onClickListener on the viewHolder instead of specific button, because we don't have any
     public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imgPoster;
         TextView tvOriginalTitle, tvReleaseDate, tvOverview;
-        Button btnDetail;
         public MovieViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             imgPoster = itemView.findViewById(R.id.img_poster);
             tvOriginalTitle = itemView.findViewById(R.id.tv_original_title);
             tvOverview = itemView.findViewById(R.id.tv_overview);
             tvReleaseDate = itemView.findViewById(R.id.tv_release_date);
-            btnDetail = itemView.findViewById(R.id.btn_detail);
-            btnDetail.setOnClickListener(this);
         }
 
         //Make an intent to bring data from viewHolder to detail activity based on it's position
         @Override
         public void onClick(View v) {
-            UpcomingItems upcomingItems = getUpcomingList().get(getAdapterPosition());
+            MovieItems movieItems = getMovieList().get(getAdapterPosition());
             Intent intent = new Intent(context, DetailActivity.class);
-            intent.putExtra(DetailActivity.EXTRA_UPCOMING, upcomingItems);
+            intent.putExtra(DetailActivity.EXTRA_MOVIES, movieItems);
             context.startActivity(intent);
         }
     }

@@ -18,14 +18,15 @@
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.dicoding.paul.moviecatalog.DetailActivity"
             android:parentActivityName="com.dicoding.paul.moviecatalog.MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dicoding.paul.moviecatalog.MainActivity" />
@@ -34,6 +35,7 @@
             android:name="com.dicoding.paul.moviecatalog.SearchActivity"
             android:parentActivityName="com.dicoding.paul.moviecatalog.MainActivity"
             android:theme="@style/AppTheme"
+            android:launchMode="singleTop"
             android:windowSoftInputMode="stateAlwaysHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

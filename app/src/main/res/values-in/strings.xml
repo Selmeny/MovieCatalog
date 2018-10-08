@@ -11,7 +11,7 @@
     <string name="score">Skor</string>
     <string name="overview">Ringkasan</string>
     <string name="search">Cari</string>
-    <string name="setting">Ganti bahasa</string>
+    <string name="setting">Pengaturan</string>
     <string name="search_hint">Cari film…</string>
     <string name="detail">Detail</string>
     <string name="share">Bagikan</string>
@@ -19,4 +19,9 @@
     <string name="now_playing">Sedang tayang</string>
     <string name="upcoming">Segera hadir</string>
     <string name="share_using">Bagikan dengan</string>
+    <string name="home">Beranda</string>
+    <string name="favourite">Favorit</string>
+    <string name="preferences">Preferensi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

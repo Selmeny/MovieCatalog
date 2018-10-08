@@ -1,9 +1,10 @@
-package com.dicoding.paul.moviecatalog;
+package com.dicoding.paul.moviecatalog.SearchMovie;
 
 import android.support.v4.content.AsyncTaskLoader;
 import android.content.Context;
 import android.util.Log;
 
+import com.dicoding.paul.moviecatalog.BuildConfig;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.SyncHttpClient;
 

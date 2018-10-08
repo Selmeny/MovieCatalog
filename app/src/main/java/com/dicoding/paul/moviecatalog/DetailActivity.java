@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.dicoding.paul.moviecatalog.NowPlayingFragment.NowPlayingItems;
+import com.dicoding.paul.moviecatalog.SearchMovie.MovieItems;
+import com.dicoding.paul.moviecatalog.UpcomingFragment.UpcomingItems;
 
 import java.util.Objects;
 

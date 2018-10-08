@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog;
+package com.dicoding.paul.moviecatalog.UpcomingFragment;
 
 import android.os.Parcel;
 import android.os.Parcelable;

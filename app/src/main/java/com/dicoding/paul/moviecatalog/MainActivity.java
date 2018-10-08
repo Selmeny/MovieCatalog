@@ -3,17 +3,26 @@ package com.dicoding.paul.moviecatalog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.SearchView;
+
+
+import com.dicoding.paul.moviecatalog.NowPlayingFragment.NowPlayingFragment;
+import com.dicoding.paul.moviecatalog.UpcomingFragment.UpcomingFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +32,15 @@ import butterknife.ButterKnife;
 
 import static com.dicoding.paul.moviecatalog.SearchActivity.EXTRA_MOVIE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private SearchView searchView;
     private String movie;
 
     @BindView(R.id.tabs) TabLayout tabs;
     @BindView(R.id.viewpager) ViewPager viewPager;
     @BindView(R.id.tb_my_toolbar) Toolbar toolbar;
+    @BindView(R.id.drawer_layout_main) DrawerLayout drawerLayout;
+    @BindView(R.id.nav_view_main) NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         setupViewPager(viewPager);
 
@@ -54,7 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        searchView.clearFocus();
+        ButterKnife.bind(this);
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+            searchView.clearFocus();
+        }
     }
 
     @Override
@@ -94,10 +119,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.settings) {
-            Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-            startActivity(mIntent);
-        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -106,6 +127,31 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new NowPlayingFragment(), getResources().getString(R.string.now_playing));
         adapter.addFragment(new UpcomingFragment(), getResources().getString(R.string.upcoming));
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        ButterKnife.bind(this);
+
+        int id = item.getItemId();
+
+        if (id == R.id.home) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        } else if (id == R.id.search) {
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.favourite) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        } else if (id == R.id.settings) {
+            Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(mIntent);
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     private static class Adapter extends FragmentPagerAdapter {
