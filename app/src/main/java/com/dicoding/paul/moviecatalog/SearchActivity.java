@@ -16,9 +16,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.support.v7.widget.SearchView;
 
-import com.dicoding.paul.moviecatalog.SearchMovie.MovieAdapter;
-import com.dicoding.paul.moviecatalog.SearchMovie.MovieItems;
-import com.dicoding.paul.moviecatalog.SearchMovie.MyAsyncTaskLoader;
+import com.dicoding.paul.moviecatalog.searchmovie.MovieAdapter;
+import com.dicoding.paul.moviecatalog.searchmovie.MovieItems;
+import com.dicoding.paul.moviecatalog.searchmovie.MyAsyncTaskLoader;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -34,6 +34,7 @@ public class  SearchActivity extends AppCompatActivity implements LoaderManager.
 
     @BindView(R.id.tb_my_toolbar) Toolbar toolbar;
     @BindView(R.id.progress_bar3) ProgressBar progressBar;
+    @BindView(R.id.rv_movie_catalog) RecyclerView recyclerView;
 
 
     @Override
@@ -121,7 +122,7 @@ public class  SearchActivity extends AppCompatActivity implements LoaderManager.
     }
 
     private void showRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.rv_movie_catalog);
+        ButterKnife.bind(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         movieAdapter = new MovieAdapter(this);
         movieAdapter.notifyDataSetChanged();

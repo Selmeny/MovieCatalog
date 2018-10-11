@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog.UpcomingFragment;
+package com.dicoding.paul.moviecatalog.searchmovie;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,13 +13,13 @@ import java.util.Locale;
 
 //Implements parcelable interface in this class to send its object through intent.
 //Another way is by using serializable interface, it's easier but slower(?) than parcelable
-public class UpcomingItems implements Parcelable {
+public class MovieItems implements Parcelable {
     private String poster;
     private String originalTitle;
     private String releaseDate;
     private String score;
     private String overview;
-    private String TAG = UpcomingItems.class.getSimpleName();
+    private String TAG = MovieItems.class.getSimpleName();
     private static final String URL_POSTER = "http://image.tmdb.org/t/p/w185";
 
     public String getPoster() {
@@ -62,7 +62,7 @@ public class UpcomingItems implements Parcelable {
         this.overview = overview;
     }
 
-    public UpcomingItems(@NonNull JSONObject object) {
+    public MovieItems(@NonNull JSONObject object) {
 
         try {
             String originalTitle = object.getString("original_title");
@@ -108,7 +108,7 @@ public class UpcomingItems implements Parcelable {
         dest.writeString(this.overview);
     }
 
-    protected UpcomingItems(Parcel in) {
+    protected MovieItems(Parcel in) {
         this.poster = in.readString();
         this.originalTitle = in.readString();
         this.releaseDate = in.readString();
@@ -116,15 +116,15 @@ public class UpcomingItems implements Parcelable {
         this.overview = in.readString();
     }
 
-    public static final Creator<UpcomingItems> CREATOR = new Creator<UpcomingItems>() {
+    public static final Parcelable.Creator<MovieItems> CREATOR = new Parcelable.Creator<MovieItems>() {
         @Override
-        public UpcomingItems createFromParcel(Parcel source) {
-            return new UpcomingItems(source);
+        public MovieItems createFromParcel(Parcel source) {
+            return new MovieItems(source);
         }
 
         @Override
-        public UpcomingItems[] newArray(int size) {
-            return new UpcomingItems[size];
+        public MovieItems[] newArray(int size) {
+            return new MovieItems[size];
         }
     };
 }

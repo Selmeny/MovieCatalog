@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     android:nestedScrollingEnabled="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.dicoding.paul.moviecatalog.NowPlayingFragment.NowPlayingFragment">
+    tools:context="com.dicoding.paul.moviecatalog.nowplayingfragment.NowPlayingFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_now_playing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
+        android:nestedScrollingEnabled="true"
         android:padding="8dp" />
 
     <ProgressBar

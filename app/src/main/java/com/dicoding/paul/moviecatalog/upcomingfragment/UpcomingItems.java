@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog.NowPlayingFragment;
+package com.dicoding.paul.moviecatalog.upcomingfragment;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,13 +13,13 @@ import java.util.Locale;
 
 //Implements parcelable interface in this class to send its object through intent.
 //Another way is by using serializable interface, it's easier but slower(?) than parcelable
-public class NowPlayingItems implements Parcelable {
+public class UpcomingItems implements Parcelable {
     private String poster;
     private String originalTitle;
     private String releaseDate;
     private String score;
     private String overview;
-    private String TAG = NowPlayingItems.class.getSimpleName();
+    private String TAG = UpcomingItems.class.getSimpleName();
     private static final String URL_POSTER = "http://image.tmdb.org/t/p/w185";
 
     public String getPoster() {
@@ -62,7 +62,7 @@ public class NowPlayingItems implements Parcelable {
         this.overview = overview;
     }
 
-    public NowPlayingItems(@NonNull JSONObject object) {
+    public UpcomingItems(@NonNull JSONObject object) {
 
         try {
             String originalTitle = object.getString("original_title");
@@ -108,7 +108,7 @@ public class NowPlayingItems implements Parcelable {
         dest.writeString(this.overview);
     }
 
-    protected NowPlayingItems(Parcel in) {
+    protected UpcomingItems(Parcel in) {
         this.poster = in.readString();
         this.originalTitle = in.readString();
         this.releaseDate = in.readString();
@@ -116,15 +116,15 @@ public class NowPlayingItems implements Parcelable {
         this.overview = in.readString();
     }
 
-    public static final Creator<NowPlayingItems> CREATOR = new Creator<NowPlayingItems>() {
+    public static final Creator<UpcomingItems> CREATOR = new Creator<UpcomingItems>() {
         @Override
-        public NowPlayingItems createFromParcel(Parcel source) {
-            return new NowPlayingItems(source);
+        public UpcomingItems createFromParcel(Parcel source) {
+            return new UpcomingItems(source);
         }
 
         @Override
-        public NowPlayingItems[] newArray(int size) {
-            return new NowPlayingItems[size];
+        public UpcomingItems[] newArray(int size) {
+            return new UpcomingItems[size];
         }
     };
 }

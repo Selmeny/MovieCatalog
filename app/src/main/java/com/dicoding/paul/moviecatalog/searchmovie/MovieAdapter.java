@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog.SearchMovie;
+package com.dicoding.paul.moviecatalog.searchmovie;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,9 @@ import com.dicoding.paul.moviecatalog.DetailActivity;
 import com.dicoding.paul.moviecatalog.R;
 
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 //Use RecyclerView as a best practice and for better handling/performance
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
@@ -60,15 +63,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     //Set onClickListener on the viewHolder instead of specific button, because we don't have any
     public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView imgPoster;
-        TextView tvOriginalTitle, tvReleaseDate, tvOverview;
-        public MovieViewHolder(View itemView) {
+        @BindView(R.id.img_poster) ImageView imgPoster;
+        @BindView(R.id.tv_original_title) TextView tvOriginalTitle;
+        @BindView(R.id.tv_release_date) TextView tvReleaseDate;
+        @BindView(R.id.tv_overview) TextView tvOverview;
+
+        MovieViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            imgPoster = itemView.findViewById(R.id.img_poster);
-            tvOriginalTitle = itemView.findViewById(R.id.tv_original_title);
-            tvOverview = itemView.findViewById(R.id.tv_overview);
-            tvReleaseDate = itemView.findViewById(R.id.tv_release_date);
+            ButterKnife.bind(this,itemView);
         }
 
         //Make an intent to bring data from viewHolder to detail activity based on it's position

@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog.NowPlayingFragment;
+package com.dicoding.paul.moviecatalog.nowplayingfragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,9 @@ import com.dicoding.paul.moviecatalog.R;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 //Use RecyclerView as a best practice and for better handling/performance
 public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.MovieViewHolder> {
     private ArrayList<NowPlayingItems> nowPlayingList = new ArrayList<>();
@@ -30,7 +33,7 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Mo
         return nowPlayingList;
     }
 
-    public void setNowPlayingList(ArrayList<NowPlayingItems> nowPlayingList) {
+    void setNowPlayingList(ArrayList<NowPlayingItems> nowPlayingList) {
         this.nowPlayingList = nowPlayingList;
         notifyDataSetChanged();
     }
@@ -60,16 +63,15 @@ public class NowPlayingAdapter extends RecyclerView.Adapter<NowPlayingAdapter.Mo
     }
 
     public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView imgPoster;
-        TextView tvOriginalTitle, tvReleaseDate, tvOverview;
-        Button btnDetail;
-        public MovieViewHolder(View itemView) {
+        @BindView(R.id.img_poster) ImageView imgPoster;
+        @BindView(R.id.tv_original_title) TextView tvOriginalTitle;
+        @BindView(R.id.tv_release_date) TextView tvReleaseDate;
+        @BindView(R.id.tv_overview) TextView tvOverview;
+        @BindView(R.id.btn_detail) Button btnDetail;
+
+        MovieViewHolder(View itemView) {
             super(itemView);
-            imgPoster = itemView.findViewById(R.id.img_poster);
-            tvOriginalTitle = itemView.findViewById(R.id.tv_original_title);
-            tvOverview = itemView.findViewById(R.id.tv_overview);
-            tvReleaseDate = itemView.findViewById(R.id.tv_release_date);
-            btnDetail = itemView.findViewById(R.id.btn_detail);
+            ButterKnife.bind(this, itemView);
             btnDetail.setOnClickListener(this);
         }
 

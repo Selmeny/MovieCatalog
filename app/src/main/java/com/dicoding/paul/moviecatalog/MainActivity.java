@@ -21,8 +21,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 
-import com.dicoding.paul.moviecatalog.NowPlayingFragment.NowPlayingFragment;
-import com.dicoding.paul.moviecatalog.UpcomingFragment.UpcomingFragment;
+import com.dicoding.paul.moviecatalog.nowplayingfragment.NowPlayingFragment;
+import com.dicoding.paul.moviecatalog.upcomingfragment.UpcomingFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -143,12 +143,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
 
         } else if (id == R.id.favourite) {
-            drawerLayout.closeDrawer(GravityCompat.START);
+            Intent intent = new Intent(MainActivity.this, FavouriteActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.settings) {
             Intent mIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(mIntent);
-
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

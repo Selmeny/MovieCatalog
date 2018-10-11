@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.dicoding.paul.moviecatalog.SearchActivity">
+    tools:context="com.dicoding.paul.moviecatalog.FavouriteActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_detail"
@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
+            app:title="@string/favourite_movie"
             app:popupTheme="@style/ToolbarTheme"
             app:layout_scrollFlags="scroll|enterAlways" />
     </android.support.design.widget.AppBarLayout>
@@ -32,7 +33,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_movie_catalog"
+            android:id="@+id/rv_favourite_movie"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
@@ -40,7 +41,7 @@
             android:padding="8dp" />
 
         <ProgressBar
-            android:id="@+id/progress_bar3"
+            android:id="@+id/progress_bar4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog.SearchMovie;
+package com.dicoding.paul.moviecatalog.searchmovie;
 
 import android.support.v4.content.AsyncTaskLoader;
 import android.content.Context;

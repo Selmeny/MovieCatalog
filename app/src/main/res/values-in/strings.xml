@@ -24,4 +24,13 @@
     <string name="preferences">Preferensi</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="like_button">Tombol Kesukaan</string>
+    <string name="favourite_movie">Film kesukaan</string>
+    <string name="add_movie">Tidak ada data, mohon tambahkan film favorit anda</string>
+    <string name="movie_added">Satu film berhasil ditambahkan</string>
+    <string name="delete">Hapus</string>
+    <string name="cancel">Batalkan</string>
+    <string name="cancel_sure">Anda yakin untuk membatalkan?</string>
+    <string name="delete_movie">Hapus film</string>
+    <string name="delete_movie_sure">Anda yakin untuk menghapus film ini?</string>
 </resources>

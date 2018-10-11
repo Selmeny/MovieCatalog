@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog.UpcomingFragment;
+package com.dicoding.paul.moviecatalog.nowplayingfragment;
 
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
@@ -16,15 +16,15 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MyAsyncTaskLoaderUpcoming extends AsyncTaskLoader<ArrayList<UpcomingItems>> {
-    private ArrayList<UpcomingItems> upcomingList;
+public class MyAsyncTaskLoaderNowPlaying extends AsyncTaskLoader<ArrayList<NowPlayingItems>> {
+    private ArrayList<NowPlayingItems> nowPlayingList;
     private boolean mHasResult = false;
     private static final String API_KEY = BuildConfig.API_KEY;
-    private static final String URL_MAIN = "https://api.themoviedb.org/3/movie/upcoming?api_key=";
+    private static final String URL_MAIN = "https://api.themoviedb.org/3/movie/now_playing?api_key=";
     private static final String URL_QUERY = "&language=en-US";
-    private String TAG = MyAsyncTaskLoaderUpcoming.class.getSimpleName();
+    private String TAG = MyAsyncTaskLoaderNowPlaying.class.getSimpleName();
 
-    public MyAsyncTaskLoaderUpcoming(final Context context) {
+    public MyAsyncTaskLoaderNowPlaying(final Context context) {
         super(context);
         onContentChanged();
     }
@@ -34,12 +34,12 @@ public class MyAsyncTaskLoaderUpcoming extends AsyncTaskLoader<ArrayList<Upcomin
         if (takeContentChanged())
             forceLoad();
         else if (mHasResult)
-            deliverResult(upcomingList);
+            deliverResult(nowPlayingList);
     }
 
     @Override
-    public void deliverResult(final ArrayList<UpcomingItems> data) {
-        upcomingList = data;
+    public void deliverResult(final ArrayList<NowPlayingItems> data) {
+        nowPlayingList = data;
         mHasResult = true;
         super.deliverResult(data);
     }
@@ -49,17 +49,17 @@ public class MyAsyncTaskLoaderUpcoming extends AsyncTaskLoader<ArrayList<Upcomin
         super.onReset();
         onStopLoading();
         if (mHasResult) {
-            onReleaseResources(upcomingList);
-            upcomingList = null;
+            onReleaseResources(nowPlayingList);
+            nowPlayingList = null;
             mHasResult = false;
         }
     }
 
     @Override
-    public ArrayList<UpcomingItems> loadInBackground() {
+    public ArrayList<NowPlayingItems> loadInBackground() {
         SyncHttpClient client = new SyncHttpClient();
 
-        final ArrayList<UpcomingItems> upcomingItemsList = new ArrayList<>();
+        final ArrayList<NowPlayingItems> nowPlayingItemList = new ArrayList<>();
 
         String url = URL_MAIN + API_KEY + URL_QUERY;
 
@@ -80,8 +80,8 @@ public class MyAsyncTaskLoaderUpcoming extends AsyncTaskLoader<ArrayList<Upcomin
 
                     for (int i=0; i<list.length(); i++) {
                       JSONObject movie = list.getJSONObject(i);
-                      UpcomingItems upcomingItems = new UpcomingItems(movie);
-                      upcomingItemsList.add(upcomingItems);
+                      NowPlayingItems nowPlayingItems = new NowPlayingItems(movie);
+                      nowPlayingItemList.add(nowPlayingItems);
 
                       Log.d(TAG, "ArrayList has been loaded");
                     }
@@ -98,12 +98,12 @@ public class MyAsyncTaskLoaderUpcoming extends AsyncTaskLoader<ArrayList<Upcomin
 
         });
 
-        return upcomingItemsList;
+        return nowPlayingItemList;
     }
 
     //ArrayList will be cleared if this method is called
-    private void onReleaseResources(ArrayList<UpcomingItems> data) {
-        upcomingList.clear();
+    private void onReleaseResources(ArrayList<NowPlayingItems> data) {
+        nowPlayingList.clear();
         Log.d(TAG, "ArrayList is cleared");
     }
 }

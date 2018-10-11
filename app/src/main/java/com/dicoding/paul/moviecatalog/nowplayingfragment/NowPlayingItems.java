@@ -1,4 +1,4 @@
-package com.dicoding.paul.moviecatalog.SearchMovie;
+package com.dicoding.paul.moviecatalog.nowplayingfragment;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,13 +13,13 @@ import java.util.Locale;
 
 //Implements parcelable interface in this class to send its object through intent.
 //Another way is by using serializable interface, it's easier but slower(?) than parcelable
-public class MovieItems implements Parcelable {
+public class NowPlayingItems implements Parcelable {
     private String poster;
     private String originalTitle;
     private String releaseDate;
     private String score;
     private String overview;
-    private String TAG = MovieItems.class.getSimpleName();
+    private String TAG = NowPlayingItems.class.getSimpleName();
     private static final String URL_POSTER = "http://image.tmdb.org/t/p/w185";
 
     public String getPoster() {
@@ -62,7 +62,7 @@ public class MovieItems implements Parcelable {
         this.overview = overview;
     }
 
-    public MovieItems(@NonNull JSONObject object) {
+    public NowPlayingItems(@NonNull JSONObject object) {
 
         try {
             String originalTitle = object.getString("original_title");
@@ -108,7 +108,7 @@ public class MovieItems implements Parcelable {
         dest.writeString(this.overview);
     }
 
-    protected MovieItems(Parcel in) {
+    protected NowPlayingItems(Parcel in) {
         this.poster = in.readString();
         this.originalTitle = in.readString();
         this.releaseDate = in.readString();
@@ -116,15 +116,15 @@ public class MovieItems implements Parcelable {
         this.overview = in.readString();
     }
 
-    public static final Parcelable.Creator<MovieItems> CREATOR = new Parcelable.Creator<MovieItems>() {
+    public static final Creator<NowPlayingItems> CREATOR = new Creator<NowPlayingItems>() {
         @Override
-        public MovieItems createFromParcel(Parcel source) {
-            return new MovieItems(source);
+        public NowPlayingItems createFromParcel(Parcel source) {
+            return new NowPlayingItems(source);
         }
 
         @Override
-        public MovieItems[] newArray(int size) {
-            return new MovieItems[size];
+        public NowPlayingItems[] newArray(int size) {
+            return new NowPlayingItems[size];
         }
     };
 }

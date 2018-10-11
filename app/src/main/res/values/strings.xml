@@ -24,4 +24,13 @@
     <string name="preferences">Preferences</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="like_button">like button</string>
+    <string name="favourite_movie">Favourite movies</string>
+    <string name="add_movie">No data, please add one movie as your favourite</string>
+    <string name="movie_added">One movie has been added</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancel_sure">Are you sure to cancel?</string>
+    <string name="delete_movie">Delete movie</string>
+    <string name="delete_movie_sure">Are you sure to delete this movie?</string>
 </resources>
