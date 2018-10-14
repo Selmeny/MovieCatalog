@@ -15,6 +15,8 @@ import android.widget.ProgressBar;
 
 import com.dicoding.paul.moviecatalog.favouritemovie.FavouriteAdapter;
 
+import java.util.Objects;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -22,7 +24,6 @@ import static com.dicoding.paul.moviecatalog.database.FavouriteContract.CONTENT_
 
 public class FavouriteActivity extends AppCompatActivity {
     private FavouriteAdapter favouriteAdapter;
-    private Cursor favouriteList;
 
     @BindView(R.id.progress_bar4) ProgressBar progressBar;
     @BindView(R.id.rv_favourite_movie) RecyclerView recyclerView;
@@ -36,7 +37,7 @@ public class FavouriteActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         progressBar.setVisibility(View.VISIBLE);
 
@@ -73,11 +74,10 @@ public class FavouriteActivity extends AppCompatActivity {
             super.onPostExecute(movies);
             progressBar.setVisibility(View.GONE);
 
-            favouriteList = movies;
-            favouriteAdapter.setFavouriteMovies(favouriteList);
+            favouriteAdapter.setFavouriteMovies(movies);
             favouriteAdapter.notifyDataSetChanged();
 
-            if (favouriteList.getCount() == 0) {
+            if (movies.getCount() == 0) {
                 showSnackbarMessage(getResources().getString(R.string.add_movie));
             }
         }
@@ -100,6 +100,5 @@ public class FavouriteActivity extends AppCompatActivity {
     protected  void onDestroy() {
         super.onDestroy();
     }
-
 
 }

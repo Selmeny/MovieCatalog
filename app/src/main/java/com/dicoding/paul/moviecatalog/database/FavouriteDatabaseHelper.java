@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 
 public class FavouriteDatabaseHelper extends SQLiteOpenHelper {
 
-    public static String DATABASE_NAME = "dbmoviecatalog";
+    private static String DATABASE_NAME = "dbmoviecatalog";
 
     private static final int DATABASE_VERSION = 1;
 
@@ -28,7 +28,7 @@ public class FavouriteDatabaseHelper extends SQLiteOpenHelper {
     );
 
 
-    public FavouriteDatabaseHelper(@Nullable Context context) {
+    FavouriteDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

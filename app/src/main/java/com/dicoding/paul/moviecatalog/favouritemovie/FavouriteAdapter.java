@@ -26,19 +26,14 @@ import butterknife.ButterKnife;
 
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.CONTENT_URI;
 
+//Use RecyclerView as a best practice and for better handling/performance
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.FavouriteViewHolder> {
     private Cursor favouriteMovies;
     private Context context;
-    private final int ALERT_DIALOG_CLOSE = 10;
-    private final int ALERT_DIALOG_DELETE = 20;
 
     public FavouriteAdapter(Context context) {
         this.context = context;
         notifyDataSetChanged();
-    }
-
-    public Cursor getFavouriteMovies() {
-        return favouriteMovies;
     }
 
     public void setFavouriteMovies(Cursor favouriteMovies) {
@@ -98,6 +93,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.Favo
             FavouriteItems favouriteItems = getItem(getAdapterPosition());
 
             switch (v.getId()) {
+                //Make an intent to bring data from viewHolder to detail activity based on it's position
                 case R.id.btn_detail:
                     Uri uri = Uri.parse(CONTENT_URI + "/" + favouriteItems.getId());
                     Intent intent = new Intent(context, DetailActivity.class);
@@ -106,25 +102,19 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.Favo
                     break;
 
                 case R.id.btn_delete:
-                    showAlertDialog(ALERT_DIALOG_DELETE, favouriteItems);
+                    showAlertDialog(favouriteItems);
                     break;
             }
         }
     }
 
-    private void showAlertDialog(int type, FavouriteItems items) {
-        final FavouriteItems favouriteItems = items;
-        final boolean isDialogClose = type == ALERT_DIALOG_CLOSE;
+    //Use this method to show confirmation dialog, delete a movie from database, and reload database
+    private void showAlertDialog(final FavouriteItems favouriteItems) {
         String dialogTitle;
         String dialogMessage;
 
-        if (isDialogClose) {
-            dialogTitle = context.getResources().getString(R.string.cancel);
-            dialogMessage = context.getResources().getString(R.string.cancel_sure);
-        } else {
-            dialogTitle = context.getResources().getString(R.string.delete_movie);
-            dialogMessage = context.getResources().getString(R.string.delete_movie_sure);
-        }
+        dialogTitle = context.getResources().getString(R.string.delete_movie);
+        dialogMessage = context.getResources().getString(R.string.delete_movie_sure);
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
@@ -135,13 +125,9 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.Favo
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (isDialogClose) {
-                            ((FavouriteActivity)context).finish();
-                        } else {
                             Uri uri = Uri.parse(CONTENT_URI + "/" + favouriteItems.getId());
                             context.getContentResolver().delete(uri, null, null);
-                            ((FavouriteActivity)context).finish();
-                        }
+                            ((FavouriteActivity)context). new LoadFavouriteAsync().execute();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {

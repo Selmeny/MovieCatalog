@@ -11,6 +11,8 @@ import android.support.annotation.Nullable;
 import com.dicoding.paul.moviecatalog.database.FavouriteContract;
 import com.dicoding.paul.moviecatalog.database.FavouriteHelper;
 
+import java.util.Objects;
+
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.AUTHORITY;
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.CONTENT_URI;
 
@@ -51,7 +53,7 @@ public class FavouriteProvider extends ContentProvider {
         }
 
         if (cursor != null) {
-            cursor.setNotificationUri(getContext().getContentResolver(), uri);
+            cursor.setNotificationUri(Objects.requireNonNull(getContext()).getContentResolver(), uri);
         }
 
         return cursor;
@@ -78,7 +80,7 @@ public class FavouriteProvider extends ContentProvider {
         }
 
         if (added > 0) {
-            getContext().getContentResolver().notifyChange(uri, null);
+            Objects.requireNonNull(getContext()).getContentResolver().notifyChange(uri, null);
         }
         return Uri.parse(CONTENT_URI + "/" + added);
     }
@@ -97,7 +99,7 @@ public class FavouriteProvider extends ContentProvider {
         }
 
         if (deleted > 0) {
-            getContext().getContentResolver().notifyChange(uri, null);
+            Objects.requireNonNull(getContext()).getContentResolver().notifyChange(uri, null);
         }
 
         return deleted;
@@ -116,7 +118,7 @@ public class FavouriteProvider extends ContentProvider {
         }
 
         if (updated > 0) {
-            getContext().getContentResolver().notifyChange(uri, null);
+            Objects.requireNonNull(getContext()).getContentResolver().notifyChange(uri, null);
         }
 
         return updated;

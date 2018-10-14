@@ -154,10 +154,11 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         return super.onOptionsItemSelected(item);
     }
 
+    //Add image button and set a listener on it
+    //It will be used for adding a movie to favourite list
     @Override
     public void onClick(View v) {
         Drawable btnLiked = getResources().getDrawable(R.drawable.ic_favorite_black_24dp);
-        Drawable btnUnliked = getResources().getDrawable(R.drawable.ic_favorite_border_black_24dp);
 
         String url = URL;
         String title =  originalTitle.getText().toString().trim();
@@ -179,10 +180,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
                 getContentResolver().insert(CONTENT_URI, values);
                 showSnackbarMessage(getResources().getString(R.string.movie_added));
-
-            } else if (liked){
-                liked = false;
-                imageButton.setBackground(btnUnliked);
             }
         }
     }

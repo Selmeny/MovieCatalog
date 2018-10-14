@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Favourite Movies</string>
+    <string name="poster_of_the_movie">Poster of the movie</string>
+    <string name="detail">Detail</string>
+    <string name="delete">Delete</string>
+    <string name="no_data">No data, please add one movie as your favourite</string>
+    <string name="delete_movie">Delete movie</string>
+    <string name="delete_movie_sure">Are you sure to delele this movie?</string>
+    <string name="overview">Overview</string>
+    <string name="score">Score</string>
+    <string name="release_date">Release date</string>
+    <string name="original_title">Original title</string>
+    <string name="share">Share</string>
+    <string name="share_using">Share using</string>
+</resources>

@@ -31,7 +31,4 @@ public class FavouriteContract {
         return  cursor.getInt(cursor.getColumnIndex(columnName));
     }
 
-    public static long getColumnLong (Cursor cursor, String columnName) {
-        return cursor.getLong(cursor.getColumnIndex(columnName));
-    }
 }

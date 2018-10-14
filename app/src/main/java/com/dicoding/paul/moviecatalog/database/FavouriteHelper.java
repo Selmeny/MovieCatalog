@@ -19,10 +19,9 @@ public class FavouriteHelper {
         this.context = context;
     }
 
-    public FavouriteHelper open() throws SQLException {
+    public void open() throws SQLException {
         databaseHelper = new FavouriteDatabaseHelper(context);
         database = databaseHelper.getWritableDatabase();
-        return this;
     }
 
     public void close() {

@@ -84,9 +84,6 @@ public class FavouriteItems implements Parcelable {
         dest.writeString(this.overview);
     }
 
-    public FavouriteItems() {
-    }
-
     public FavouriteItems(Cursor cursor) {
         this.id = getColumnInt(cursor, _ID);
         this.poster = getColumnString(cursor, POSTER);
