@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dicoding.paul.moviecatalog">
 
+    <permission
+        android:name="com.dicoding.paul.moviecatalog.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.dicoding.paul.moviecatalog.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,17 +20,19 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.dicoding.paul.moviecatalog.MainActivity"
-            android:theme="@style/AppTheme"
             android:launchMode="singleTop"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.dicoding.paul.moviecatalog.DetailActivity"
+            android:launchMode="singleTop"
             android:parentActivityName="com.dicoding.paul.moviecatalog.MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
@@ -32,6 +41,7 @@
         </activity>
         <activity
             android:name="com.dicoding.paul.moviecatalog.SearchActivity"
+            android:launchMode="singleTop"
             android:parentActivityName="com.dicoding.paul.moviecatalog.MainActivity"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden">
@@ -39,6 +49,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.dicoding.paul.moviecatalog.MainActivity" />
         </activity>
+
+        <activity
+            android:name="com.dicoding.paul.moviecatalog.FavouriteActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.dicoding.paul.moviecatalog.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dicoding.paul.moviecatalog.MainActivity" />
+        </activity>
+
+        <provider
+            android:name=".provider.FavouriteProvider"
+            android:authorities="com.dicoding.paul.moviecatalog"
+            android:exported="true"
+            android:readPermission="com.dicoding.paul.moviecatalog.READ_DATABASE"
+            android:writePermission="com.dicoding.paul.moviecatalog.WRITE_DATABASE" />
+
     </application>
 
 </manifest>

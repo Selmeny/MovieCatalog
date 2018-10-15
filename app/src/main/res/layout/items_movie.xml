@@ -45,11 +45,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.4"
-                android:fontFamily="@font/librefranklin_bold"
                 android:gravity="center_vertical"
                 android:lines="1"
-                android:textColor="@android:color/black"
-                android:textSize="16sp"
+                style="@style/Text.Bold"
                 tools:text="Title"/>
 
             <TextView
@@ -57,11 +55,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.4"
-                android:fontFamily="@font/librefranklin_regular"
                 android:gravity="center_vertical"
                 android:lines="1"
-                android:textColor="@android:color/black"
-                android:textSize="16sp"
+                style="@style/Text"
                 tools:text="Preview"/>
 
             <TextView
@@ -69,11 +65,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.4"
-                android:fontFamily="@font/librefranklin_regular"
                 android:gravity="center_vertical"
                 android:lines="1"
-                android:textColor="@android:color/black"
-                android:textSize="16sp"
+                style="@style/Text"
                 tools:text="Release date"/>
         </LinearLayout>
 

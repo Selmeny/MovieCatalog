@@ -58,19 +58,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_bold"
                     android:text="@string/original_title"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Bold"/>
 
                 <TextView
                     android:id="@+id/tv_original_title_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_bold"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text.Bold"/>
             </TableRow>
 
             <TableRow
@@ -84,19 +80,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_regular"
                     android:text="@string/release_date"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text" />
 
                 <TextView
                     android:id="@+id/tv_release_date_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_regular"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text" />
             </TableRow>
 
             <TableRow
@@ -110,25 +102,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_regular"
                     android:text="@string/score"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text"/>
 
                 <TextView
                     android:id="@+id/tv_score_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_regular"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text"/>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:weightSum="1">
 
                 <TextView
@@ -136,21 +123,28 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="0.025"
-                    android:fontFamily="@font/librefranklin_regular"
                     android:text="@string/overview"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text" />
 
                 <TextView
                     android:id="@+id/tv_overview_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.975"
-                    android:fontFamily="@font/librefranklin_regular"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+                    style="@style/Text" />
             </TableRow>
         </TableLayout>
+
+        <ImageButton
+            android:id="@+id/btn_favourite"
+            style="?borderlessButtonStyle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/ic_favorite_border_black_24dp"
+            android:contentDescription="@string/like_button" />
+
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

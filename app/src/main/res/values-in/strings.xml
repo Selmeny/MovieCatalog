@@ -11,7 +11,7 @@
     <string name="score">Skor</string>
     <string name="overview">Ringkasan</string>
     <string name="search">Cari</string>
-    <string name="setting">Ganti bahasa</string>
+    <string name="setting">Pengaturan</string>
     <string name="search_hint">Cari film…</string>
     <string name="detail">Detail</string>
     <string name="share">Bagikan</string>
@@ -19,4 +19,18 @@
     <string name="now_playing">Sedang tayang</string>
     <string name="upcoming">Segera hadir</string>
     <string name="share_using">Bagikan dengan</string>
+    <string name="home">Beranda</string>
+    <string name="favourite">Favorit</string>
+    <string name="preferences">Preferensi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="like_button">Tombol Kesukaan</string>
+    <string name="favourite_movie">Film kesukaan</string>
+    <string name="add_movie">Tidak ada data, mohon tambahkan film favorit anda</string>
+    <string name="movie_added">Satu film berhasil ditambahkan</string>
+    <string name="delete">Hapus</string>
+    <string name="cancel">Batalkan</string>
+    <string name="cancel_sure">Anda yakin untuk membatalkan?</string>
+    <string name="delete_movie">Hapus film</string>
+    <string name="delete_movie_sure">Anda yakin untuk menghapus film ini?</string>
 </resources>

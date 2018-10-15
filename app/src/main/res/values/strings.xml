@@ -11,7 +11,7 @@
     <string name="score">Score</string>
     <string name="overview">Overview</string>
     <string name="search">Search</string>
-    <string name="setting">Change language</string>
+    <string name="setting">Setting</string>
     <string name="search_hint">Search movie…</string>
     <string name="detail">Detail</string>
     <string name="share">Share</string>
@@ -19,4 +19,18 @@
     <string name="now_playing">Now playing</string>
     <string name="upcoming">Upcoming</string>
     <string name="share_using">Share using</string>
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="preferences">Preferences</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="like_button">like button</string>
+    <string name="favourite_movie">Favourite movies</string>
+    <string name="add_movie">No data, please add one movie as your favourite</string>
+    <string name="movie_added">One movie has been added</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="cancel_sure">Are you sure to cancel?</string>
+    <string name="delete_movie">Delete movie</string>
+    <string name="delete_movie_sure">Are you sure to delete this movie?</string>
 </resources>
