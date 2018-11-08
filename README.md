@@ -4,8 +4,13 @@ My second android project used as a submission for dicoding academy. This projec
 Here are the main things that i learned to use in this project:
 - API
 - JSON objects
-- Database
+- Database (SQlite)
 - Content provider
 - Widget
 - Alarm manager
 - Shared preferences
+
+Pictures:
+
+<img src="https://github.com/Selmeny/MovieCatalog/blob/master/app/src/main/res/drawable/images-1.png" width="200"> <img src="https://github.com/Selmeny/MovieCatalog/blob/master/app/src/main/res/drawable/images-2.png" width="200"> <img src="https://github.com/Selmeny/MovieCatalog/blob/master/app/src/main/res/drawable/images-3.png" width="200"> <img src="https://github.com/Selmeny/MovieCatalog/blob/master/app/src/main/res/drawable/images-4.png" width="200">
+
