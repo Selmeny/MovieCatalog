@@ -95,7 +95,6 @@ public class MyAsyncTaskLoaderNowPlaying extends AsyncTaskLoader<ArrayList<NowPl
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 Log.e(TAG, "Loading failed");
             }
-
         });
 
         return nowPlayingItemList;
@@ -103,6 +102,7 @@ public class MyAsyncTaskLoaderNowPlaying extends AsyncTaskLoader<ArrayList<NowPl
 
     //ArrayList will be cleared if this method is called
     private void onReleaseResources(ArrayList<NowPlayingItems> data) {
+        nowPlayingList = data;
         nowPlayingList.clear();
         Log.d(TAG, "ArrayList is cleared");
     }

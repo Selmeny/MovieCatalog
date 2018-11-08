@@ -106,6 +106,7 @@ public class MyAsyncTaskLoader extends AsyncTaskLoader<ArrayList<MovieItems>> {
 
     //ArrayList will be cleared if this method is called
     private void onReleaseResources(ArrayList<MovieItems> data) {
+        movieList = data;
         movieList.clear();
         Log.d(TAG, "ArrayList is cleared");
     }

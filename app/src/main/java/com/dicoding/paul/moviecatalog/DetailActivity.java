@@ -34,6 +34,7 @@ import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolu
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolumns.POSTER;
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolumns.RELEASE_DATE;
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolumns.SCORE;
+import static com.dicoding.paul.moviecatalog.widget.ImageBannerWidget.widgetRemoteUpdate;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
     private String URL;
@@ -180,6 +181,9 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
                 getContentResolver().insert(CONTENT_URI, values);
                 showSnackbarMessage(getResources().getString(R.string.movie_added));
+
+                //Update widget
+                widgetRemoteUpdate(getApplicationContext());
             }
         }
     }

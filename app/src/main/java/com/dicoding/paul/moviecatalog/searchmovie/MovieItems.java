@@ -75,9 +75,9 @@ public class MovieItems implements Parcelable {
             String poster = URL_POSTER + mPoster;
 
             String mDate = object.getString("release_date");
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
             Date date = dateFormat.parse(mDate);
-            SimpleDateFormat newDateFormat = new SimpleDateFormat("EEEE, dd/MM/yyyy", Locale.US);
+            SimpleDateFormat newDateFormat = new SimpleDateFormat("EEEE, dd/MM/yyyy", Locale.getDefault());
             String releaseDate = newDateFormat.format(date);
 
             this.poster = poster;
@@ -86,7 +86,7 @@ public class MovieItems implements Parcelable {
             this.score = score;
             this.overview = overview;
 
-            Log.d(TAG, "All variables are loaded with data from JSON object");
+            Log.d(TAG, "New movie: " + originalTitle);
 
         } catch (Exception e) {
             e.printStackTrace();
