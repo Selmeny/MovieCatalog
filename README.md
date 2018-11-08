@@ -8,6 +8,7 @@ Here are the main things that i learned to use in this project:
 - Content provider
 - Widget
 - Alarm manager
+- Notification
 - Shared preferences
 
 Pictures:
