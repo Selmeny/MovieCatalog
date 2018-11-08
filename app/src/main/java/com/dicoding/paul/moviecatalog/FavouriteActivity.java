@@ -2,10 +2,10 @@ package com.dicoding.paul.moviecatalog;
 
 import android.database.Cursor;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -100,5 +100,4 @@ public class FavouriteActivity extends AppCompatActivity {
     protected  void onDestroy() {
         super.onDestroy();
     }
-
 }

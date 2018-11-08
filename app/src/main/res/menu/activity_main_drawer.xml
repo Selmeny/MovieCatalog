@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -22,9 +23,24 @@
     <item android:title="@string/preferences">
         <menu>
             <item
+                android:id="@+id/switch_daily"
+                android:title="@string/daily_contents"
+                android:icon="@drawable/ic_new_releases_black_24dp"
+                app:actionLayout="@layout/switch_item" />
+
+            <item
+                android:id="@+id/switch_now_playing"
+                android:title="@string/now_playing_reminder"
+                android:icon="@drawable/ic_notifications_black_24dp"
+                app:actionLayout="@layout/switch_item" />
+
+            <item
                 android:id="@+id/settings"
                 android:icon="@drawable/ic_settings_black_24dp"
                 android:title="@string/setting"/>
         </menu>
     </item>
+
+
+
 </menu>

@@ -25,6 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.CONTENT_URI;
+import static com.dicoding.paul.moviecatalog.widget.ImageBannerWidget.widgetRemoteUpdate;
 
 //Use RecyclerView as a best practice and for better handling/performance
 public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.FavouriteViewHolder> {
@@ -127,7 +128,12 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.Favo
                     public void onClick(DialogInterface dialog, int which) {
                             Uri uri = Uri.parse(CONTENT_URI + "/" + favouriteItems.getId());
                             context.getContentResolver().delete(uri, null, null);
-                            ((FavouriteActivity)context). new LoadFavouriteAsync().execute();
+
+                            //Reload data from updated database
+                            ((FavouriteActivity)context).new LoadFavouriteAsync().execute();
+
+                            //Update widget
+                            widgetRemoteUpdate(context);
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {

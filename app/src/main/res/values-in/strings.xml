@@ -11,7 +11,7 @@
     <string name="score">Skor</string>
     <string name="overview">Ringkasan</string>
     <string name="search">Cari</string>
-    <string name="setting">Pengaturan</string>
+    <string name="setting">Ganti bahasa</string>
     <string name="search_hint">Cari film…</string>
     <string name="detail">Detail</string>
     <string name="share">Bagikan</string>
@@ -33,4 +33,17 @@
     <string name="cancel_sure">Anda yakin untuk membatalkan?</string>
     <string name="delete_movie">Hapus film</string>
     <string name="delete_movie_sure">Anda yakin untuk menghapus film ini?</string>
+    <string name="appwidget_text">Tidak ada data</string>
+    <string name="add_widget">Tambah widget</string>
+    <string name="now_playing_reminder">Sedang tayang</string>
+    <string name="daily_contents">Konten harian</string>
+    <string name="channel_id" translatable="false">channel_01</string>
+    <string name="channel_name" translatable="false">channel_movie_catalog</string>
+    <string name="new_contents">Kamu bosan? Kami mempunyai banyak film baru</string>
+    <string name="toast_daily_contents">Pengingat konten harian diaktifkan</string>
+    <string name="toast_daily_contents_off">Pengingat konten harian dinonaktifkan</string>
+    <string name="toast_reminder">Pengingat sedang tayang diaktifkan</string>
+    <string name="toast_reminder_off">Pengingat sedang tayang dinonaktifkan</string>
+    <string name="is_now_playing"> sudah tayang hari ini</string>
+    <string name="movie_title">Judul film: </string>
 </resources>

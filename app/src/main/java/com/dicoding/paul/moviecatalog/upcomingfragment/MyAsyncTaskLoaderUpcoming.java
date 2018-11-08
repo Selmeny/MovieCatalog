@@ -103,6 +103,7 @@ public class MyAsyncTaskLoaderUpcoming extends AsyncTaskLoader<ArrayList<Upcomin
 
     //ArrayList will be cleared if this method is called
     private void onReleaseResources(ArrayList<UpcomingItems> data) {
+        upcomingList = data;
         upcomingList.clear();
         Log.d(TAG, "ArrayList is cleared");
     }

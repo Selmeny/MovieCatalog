@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Movie Catalog</string>
+    <string name="app_name">Movie catalog</string>
     <string name="movie_catalog">Movie Catalog</string>
     <string name="poster_of_the_movie">poster of the movie</string>
     <string name="preview">Preview</string>
@@ -11,7 +11,7 @@
     <string name="score">Score</string>
     <string name="overview">Overview</string>
     <string name="search">Search</string>
-    <string name="setting">Setting</string>
+    <string name="setting">Change language</string>
     <string name="search_hint">Search movie…</string>
     <string name="detail">Detail</string>
     <string name="share">Share</string>
@@ -33,4 +33,17 @@
     <string name="cancel_sure">Are you sure to cancel?</string>
     <string name="delete_movie">Delete movie</string>
     <string name="delete_movie_sure">Are you sure to delete this movie?</string>
+    <string name="appwidget_text">No data</string>
+    <string name="add_widget">Add widget</string>
+    <string name="now_playing_reminder">Now playing reminder</string>
+    <string name="daily_contents">Daily contents</string>
+    <string name="channel_id" translatable="false">channel_01</string>
+    <string name="channel_name" translatable="false">channel_movie_catalog</string>
+    <string name="new_contents">Are you bored? We have many new movies…</string>
+    <string name="toast_daily_contents">Daily contents reminder is activated</string>
+    <string name="toast_daily_contents_off">Daily contents reminder is deactivated</string>
+    <string name="toast_reminder">Now playing reminder is activated</string>
+    <string name="toast_reminder_off">Now playing reminder is deactivated</string>
+    <string name="is_now_playing"> is now playing</string>
+    <string name="movie_title">Movie title: </string>
 </resources>
