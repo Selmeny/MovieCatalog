@@ -19,6 +19,8 @@ public class NowPlayingItems implements Parcelable {
     private String releaseDate;
     private String score;
     private String overview;
+    private boolean state;
+
     private String TAG = NowPlayingItems.class.getSimpleName();
     private static final String URL_POSTER = "http://image.tmdb.org/t/p/w185";
 
@@ -62,6 +64,14 @@ public class NowPlayingItems implements Parcelable {
         this.overview = overview;
     }
 
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
     public NowPlayingItems(@NonNull JSONObject object) {
 
         try {
@@ -85,6 +95,7 @@ public class NowPlayingItems implements Parcelable {
             this.releaseDate = releaseDate;
             this.score = score;
             this.overview = overview;
+            this.state = false;
 
             Log.d(TAG, "New movie: " + originalTitle);
 
@@ -106,6 +117,7 @@ public class NowPlayingItems implements Parcelable {
         dest.writeString(this.releaseDate);
         dest.writeString(this.score);
         dest.writeString(this.overview);
+        dest.writeByte(this.state ? (byte) 1 : (byte) 0);
     }
 
     protected NowPlayingItems(Parcel in) {
@@ -114,6 +126,7 @@ public class NowPlayingItems implements Parcelable {
         this.releaseDate = in.readString();
         this.score = in.readString();
         this.overview = in.readString();
+        this.state = in.readByte() != 0;
     }
 
     public static final Creator<NowPlayingItems> CREATOR = new Creator<NowPlayingItems>() {

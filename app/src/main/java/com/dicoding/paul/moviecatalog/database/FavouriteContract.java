@@ -14,6 +14,7 @@ public class FavouriteContract {
         public static String RELEASE_DATE = "date";
         public static String OVERVIEW = "overview";
         public static String SCORE = "score";
+        public static String STATE = "state";
     }
 
     public static final String AUTHORITY = "com.dicoding.paul.moviecatalog";
