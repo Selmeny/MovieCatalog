@@ -17,16 +17,17 @@ public class FavouriteDatabaseHelper extends SQLiteOpenHelper {
             " %s TEXT NOT NULL," +
             " %s TEXT NOT NULL," +
             " %s TEXT NOT NULL," +
-            " %s TEXT NOT NULL)",
+            " %s TEXT NOT NULL," +
+            " %s INTEGER)",
     FavouriteContract.TABLE_FAVOURITE,
     FavouriteContract.Notecolumns._ID,
     FavouriteContract.Notecolumns.POSTER,
     FavouriteContract.Notecolumns.ORIGINAL_TITLE,
     FavouriteContract.Notecolumns.RELEASE_DATE,
     FavouriteContract.Notecolumns.OVERVIEW,
-    FavouriteContract.Notecolumns.SCORE
+    FavouriteContract.Notecolumns.SCORE,
+    FavouriteContract.Notecolumns.STATE
     );
-
 
     FavouriteDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

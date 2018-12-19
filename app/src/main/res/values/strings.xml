@@ -27,7 +27,7 @@
     <string name="like_button">like button</string>
     <string name="favourite_movie">Favourite movies</string>
     <string name="add_movie">No data, please add one movie as your favourite</string>
-    <string name="movie_added">One movie has been added</string>
+    <string name="movie_added">Liked</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="cancel_sure">Are you sure to cancel?</string>
@@ -46,4 +46,5 @@
     <string name="toast_reminder_off">Now playing reminder is deactivated</string>
     <string name="is_now_playing"> is now playing</string>
     <string name="movie_title">Movie title: </string>
+    <string name="movie_deleted">Unliked</string>
 </resources>

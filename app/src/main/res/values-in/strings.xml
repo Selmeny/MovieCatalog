@@ -27,7 +27,7 @@
     <string name="like_button">Tombol Kesukaan</string>
     <string name="favourite_movie">Film kesukaan</string>
     <string name="add_movie">Tidak ada data, mohon tambahkan film favorit anda</string>
-    <string name="movie_added">Satu film berhasil ditambahkan</string>
+    <string name="movie_added">Suka</string>
     <string name="delete">Hapus</string>
     <string name="cancel">Batalkan</string>
     <string name="cancel_sure">Anda yakin untuk membatalkan?</string>
@@ -46,4 +46,5 @@
     <string name="toast_reminder_off">Pengingat sedang tayang dinonaktifkan</string>
     <string name="is_now_playing"> sudah tayang hari ini</string>
     <string name="movie_title">Judul film: </string>
+    <string name="movie_deleted">Tidak suka</string>
 </resources>

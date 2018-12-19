@@ -10,6 +10,7 @@ import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolu
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolumns.POSTER;
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolumns.RELEASE_DATE;
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolumns.SCORE;
+import static com.dicoding.paul.moviecatalog.database.FavouriteContract.Notecolumns.STATE;
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.getColumnInt;
 import static com.dicoding.paul.moviecatalog.database.FavouriteContract.getColumnString;
 
@@ -20,6 +21,7 @@ public class FavouriteItems implements Parcelable {
     private String releaseDate;
     private String score;
     private String overview;
+    private int state;
 
     public int getId() {
         return id;
@@ -69,6 +71,24 @@ public class FavouriteItems implements Parcelable {
         this.overview = overview;
     }
 
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public FavouriteItems(Cursor cursor) {
+        this.id = getColumnInt(cursor, _ID);
+        this.poster = getColumnString(cursor, POSTER);
+        this.originalTitle = getColumnString(cursor, ORIGINAL_TITLE);
+        this.releaseDate = getColumnString(cursor, RELEASE_DATE);
+        this.overview = getColumnString(cursor, OVERVIEW);
+        this.score = getColumnString(cursor, SCORE);
+        this.state = getColumnInt(cursor, STATE);
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -82,15 +102,7 @@ public class FavouriteItems implements Parcelable {
         dest.writeString(this.releaseDate);
         dest.writeString(this.score);
         dest.writeString(this.overview);
-    }
-
-    public FavouriteItems(Cursor cursor) {
-        this.id = getColumnInt(cursor, _ID);
-        this.poster = getColumnString(cursor, POSTER);
-        this.originalTitle = getColumnString(cursor, ORIGINAL_TITLE);
-        this.releaseDate = getColumnString(cursor, RELEASE_DATE);
-        this.overview = getColumnString(cursor, OVERVIEW);
-        this.score = getColumnString(cursor, SCORE);
+        dest.writeInt(this.state);
     }
 
     protected FavouriteItems(Parcel in) {
@@ -100,9 +112,10 @@ public class FavouriteItems implements Parcelable {
         this.releaseDate = in.readString();
         this.score = in.readString();
         this.overview = in.readString();
+        this.state = in.readInt();
     }
 
-    public static final Parcelable.Creator<FavouriteItems> CREATOR = new Parcelable.Creator<FavouriteItems>() {
+    public static final Creator<FavouriteItems> CREATOR = new Creator<FavouriteItems>() {
         @Override
         public FavouriteItems createFromParcel(Parcel source) {
             return new FavouriteItems(source);
