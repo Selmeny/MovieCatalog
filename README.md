@@ -1,7 +1,7 @@
-# MovieCatalog
+# Movie Catalog App
 My second android project used as a submission for dicoding academy. This project mainly worked on API, database, and scheduled works. Widget and notification also are added for extra features.
 
-Here are the main things that i learned to use in this project:
+Here are the main features that i use in this project:
 - API
 - JSON objects
 - Database (SQlite)
